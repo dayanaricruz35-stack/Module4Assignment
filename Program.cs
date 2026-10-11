@@ -1,0 +1,39 @@
+﻿
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the first number: ");
+        string num1 = Console.ReadLine();
+
+        Console.Write("Enter the second number: ");
+        string num2 = Console.ReadLine();
+
+        DivideNumbers(num1, num2);
+    }
+
+    static void DivideNumbers(string a, string b)
+    {
+        try
+        {
+            int number1 = int.Parse(a);
+            int number2 = int.Parse(b);
+
+            int result = number1 / number2;
+
+            Console.WriteLine("Result: " + result);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine(
+                "Error: Please enter valid integers.");
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine(
+                "Error: Cannot divide by zero.");
+        }
+    }
+}
